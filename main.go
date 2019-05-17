@@ -280,8 +280,8 @@ func main() {
 
 	r := gin.Default()
 
-	r.StaticFS("/static", http.Dir("../client/build/static"))
-	r.StaticFile("/", "../client/build/index.html")
+	r.StaticFS("/static", http.Dir("./client/build/static"))
+	r.StaticFile("/", "./client/build/index.html")
 	r.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
